@@ -42,6 +42,8 @@ public class TwitterFinder {
         query.setSince("2015-01-01");
         query.setLang("en");
 
+        int[] lala = new int[5];
+
         QueryResult result;
         try {
             result = ((SearchResource) twitter).search(query);
@@ -49,19 +51,24 @@ public class TwitterFinder {
                 for (Status status : result.getTweets()) {
 
                     if(status.getRetweetedStatus() == null || status.isRetweet() == false){
-                        Tweet newTweet = new Tweet();
-                        newTweet.setTextToFind(textToFind);
-                        newTweet.setTweetMessage(status.getText());
-                        newTweet.setUser(status.getUser().getScreenName());
-                        em.getTransaction().begin();
-                        em.persist(newTweet);
-                        em.getTransaction().commit();
+//                        Tweet newTweet = new Tweet();
+//                        newTweet.setTextToFind(textToFind);
+//                        newTweet.setTweetMessage(status.getText());
+//                        newTweet.setUser(status.getUser().getScreenName());
+//                        em.getTransaction().begin();
+//                        em.persist(newTweet);
+//                        em.getTransaction().commit();
+
+                        int aux = NLPSearch.findSentiment(status.getText());
+                        lala[aux-1]++;
+
                     }
                 }
                 query = result.nextQuery();
                 if(query!=null)
                     result = ((SearchResource) twitter).search(query);
             }
+            System.out.println(lala);
         } catch (TwitterException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
