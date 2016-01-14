@@ -16,8 +16,10 @@ public class Tweet {
     private Long id;
 
     private String emotion;
+    private Integer emotionId;
     private String textToFind;
     private String tweetMessage;
+    private String user;
 
     public String getTextToFind() {
         return textToFind;
@@ -39,8 +41,29 @@ public class Tweet {
         return emotion;
     }
 
-    public void setEmotion(String emotion) {
-        this.emotion = emotion;
+    public Integer getEmotionId() {
+        return emotionId;
+    }
+
+    public void setEmotionId(Integer emotionId) {
+        switch (emotionId) {
+            case 0:
+                emotion = "Very Happy";
+                break;
+            case 1:
+                emotion = "Happy";
+                break;
+            case 2:
+                emotion = "Neutral";
+                break;
+            case 3:
+                emotion = "Sad";
+                break;
+            case 4:
+                emotion = "Very Sad";
+                break;
+        }
+        this.emotionId = emotionId;
     }
 
     public String getTweetMessage() {
@@ -51,11 +74,22 @@ public class Tweet {
         this.tweetMessage = tweetMessage;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Tweet{" +
-                "emotion='" + emotion + '\'' +
+                "id=" + id +
+                ", emotion='" + emotion + '\'' +
+                ", textToFind='" + textToFind + '\'' +
                 ", tweetMessage='" + tweetMessage + '\'' +
+                ", user='" + user + '\'' +
                 '}';
     }
 
@@ -77,4 +111,5 @@ public class Tweet {
         result = 31 * result + (tweetMessage != null ? tweetMessage.hashCode() : 0);
         return result;
     }
+    
 }
