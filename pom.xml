@@ -98,7 +98,17 @@
 			<artifactId>twitter4j-core</artifactId>
 			<version>4.0.4</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.googlecode.efficient-java-matrix-library</groupId>
+			<artifactId>ejml</artifactId>
+			<version>0.23</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.5.2</version>
+			<classifier>models</classifier>
+		</dependency>
 	</dependencies>
 
 	<build>

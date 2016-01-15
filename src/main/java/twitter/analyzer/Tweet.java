@@ -5,9 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by adumitru on 1/7/2016.
- */
 @Entity
 public class Tweet {
 

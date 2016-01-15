@@ -8,15 +8,12 @@ import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
 
-/**
- * Created by Adi on 1/14/2016.
- */
 public class NLPSearch {
 
     static StanfordCoreNLP pipeline;
 
     static{
-        pipeline = new StanfordCoreNLP("MyPropFile.properties");
+        pipeline = new StanfordCoreNLP("MyPropFile");
     }
 
     public static int findSentiment(String tweet) {
