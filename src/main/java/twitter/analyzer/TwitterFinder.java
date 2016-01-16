@@ -38,13 +38,14 @@ public class TwitterFinder {
 
     public static void getTweets(String textToFind) throws IOException {
         Query query = new Query(textToFind+ " -filter:retweets -filter:links -filter:replies -filter:images");
-        query.setCount(10);
+        query.setCount(100);
 
         //query.
-        query.setSince("2015-01-01");
+        query.setSince("2011-04-27");
+        query.setUntil("2011-04-30");
         query.setLang("en");
         query.setLocale("en");
-        int maxNumber = 10;
+        int maxNumber = 100;
         int index = 0;
 
 

@@ -69,11 +69,11 @@ public class ApplicationUI extends Window {
 
 
 
-        emotionVerySad = new Label("Very Sad" + " = " + roundTwoDecimals(verySadPercent) + "%");
-        emotionSad = new Label("Sad" + " = " + roundTwoDecimals(sadPercent )+ "%");
-        emotionNeutral = new Label("Neutral" + " = " + roundTwoDecimals(neutralPercent) + "%");
-        emotionHappy = new Label("Happy" + " = " + roundTwoDecimals(happyPercent) + "%");
-        emotionVeryHappy = new Label("Very happy" + " = " + roundTwoDecimals(veryHappyPercent) + "%");
+        emotionVerySad = new Label("Very Sad" + " = " + verySadPercent + "%");
+        emotionSad = new Label("Sad" + " = " + sadPercent+ "%");
+        emotionNeutral = new Label("Neutral" + " = " + neutralPercent + "%");
+        emotionHappy = new Label("Happy" + " = " + happyPercent + "%");
+        emotionVeryHappy = new Label("Very happy" + " = " + veryHappyPercent + "%");
 
         showTweetsLayout.addComponent(emotionVerySad);
         showTweetsLayout.addComponent(emotionSad);
